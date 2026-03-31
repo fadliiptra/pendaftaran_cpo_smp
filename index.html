@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="id" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran OSIS</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        
+        .gradient-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        
+        .card-glass {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        
+        @keyframes float-in {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2.2);
+                opacity: 0;
+            }
+        }
+        
+        .animate-float-in {
+            animation: float-in 0.7s ease-out forwards;
+        }
+        
+        .animate-float-in-d1 {
+            animation: float-in 0.7s 0.1s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .animate-float-in-d2 {
+            animation: float-in 0.7s 0.2s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .animate-float-in-d3 {
+            animation: float-in 0.7s 0.3s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .animate-float-in-d4 {
+            animation: float-in 0.7s 0.4s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .animate-float-in-d5 {
+            animation: float-in 0.7s 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .input-field:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+        
+        .success-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 3px solid #22c55e;
+            animation: pulse-ring 1.5s ease-out infinite;
+        }
+    </style>
+</head>
+
+<body class="h-full">
+    <div id="app" class="h-full w-full overflow-auto relative" style="background-color: #0f172a;">
+        <div class="gradient-blob" style="width:400px;height:400px;top:-100px;left:-100px;background:#3b82f6;"></div>
+        <div class="gradient-blob" style="width:350px;height:350px;bottom:-50px;right:-80px;background:#8b5cf6;"></div>
+
+        <div id="form-view" class="relative z-10 flex items-center justify-center min-h-full px-4 py-10">
+            <div class="w-full max-w-lg">
+                <div class="text-center mb-8 animate-float-in">
+                    <p class="text-sm font-semibold tracking-widest uppercase mb-1" style="color: #60a5fa;">SMP MAHARDHIKA BATUJAJAR</p>
+                    <h1 class="text-2xl font-8000 mb-1" style="color: #f1f5f9;">Pendaftaran Calon Pengurus OSIS (CPO)</h1>
+                    <p class="text-base" style="color: #94a3b8;">Organisasi Siswa Intra Sekolah</p>
+                </div>
+
+                <div class="card-glass rounded-2xl p-6 sm:p-8 animate-float-in-d1" style="background: rgba(30,41,59,0.7); border: 1px solid rgba(148,163,184,0.1);">
+                    <form id="osis-form" class="space-y-5">
+                        <div class="animate-float-in-d2">
+                            <label for="nama" class="block text-sm font-600 mb-1.5" style="color: #cbd5e1;">Nama
+                                Lengkap</label>
+                            <input type="text" id="nama" required placeholder="Masukkan nama lengkap" class="input-field w-full px-4 py-3 rounded-xl text-sm outline-none transition-all" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(148,163,184,0.2); color: #f1f5f9;">
+                        </div>
+
+                        <div class="animate-float-in-d2">
+                            <label for="kelas" class="block text-sm font-600 mb-1.5" style="color: #cbd5e1;">Kelas</label>
+                            <input type="text" id="kelas" required placeholder="Contoh: VII A" class="input-field w-full px-4 py-3 rounded-xl text-sm outline-none transition-all" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(148,163,184,0.2); color: #f1f5f9;">
+                        </div>
+
+                        <div class="animate-float-in-d3">
+                            <label for="no_hp" class="block text-sm font-600 mb-1.5" style="color: #cbd5e1;">No.
+                                WhatsApp</label>
+                            <input type="tel" id="no_hp" required placeholder="08xxxxxxxxxx" class="input-field w-full px-4 py-3 rounded-xl text-sm outline-none transition-all" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(148,163,184,0.2); color: #f1f5f9;">
+                        </div>
+
+                        <div class="animate-float-in-d4">
+                            <label for="motivasi" class="block text-sm font-600 mb-1.5" style="color: #cbd5e1;">Motivasi
+                                Bergabung</label>
+                            <textarea id="motivasi" required rows="3" placeholder="Ceritakan alasanmu..." class="input-field w-full px-4 py-3 rounded-xl text-sm outline-none transition-all resize-none" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(148,163,184,0.2); color: #f1f5f9;"></textarea>
+                        </div>
+
+                        <div class="animate-float-in-d5 pt-1">
+                            <button type="submit" id="submit-btn" class="w-full py-3.5 rounded-xl font-700 text-sm tracking-wide transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2" style="background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: #ffffff; box-shadow: 0 4px 20px rgba(59,130,246,0.3);">
+                                <span id="submit-text">Daftar Sekarang</span>
+                                <span id="submit-spinner" class="hidden">
+                                    <svg class="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                            stroke-width="4" fill="none"></circle>
+                                        <path class="opacity-75" fill="currentColor"
+                                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="success-view" class="hidden relative z-10 flex items-center justify-center min-h-full px-4 py-10">
+            <div class="w-full max-w-lg text-center">
+                <div class="relative inline-flex items-center justify-center w-24 h-24 rounded-full mb-6" style="background: rgba(34,197,94,0.15);">
+                    <div class="success-ring" style="width:96px;height:96px;top:0;left:0;"></div>
+                    <i data-lucide="check-circle" style="width:48px;height:48px;color:#22c55e;"></i>
+                </div>
+                <h2 class="text-2xl font-800 mb-2" style="color: #f1f5f9;">Selamat!! Pendaftaranmu berhasil</h2>
+                <p class="text-sm mb-8" style="color: #94a3b8;">Bergabung ke grup WhatsApp Calon Pengurus OSIS (CPO) untuk mengetahui informasi selanjutnya</p>
+                <div class="card-glass rounded-2xl p-6 mb-6" style="background: rgba(30,41,59,0.7); border: 1px solid rgba(148,163,184,0.1);">
+                    <a href="https://chat.whatsapp.com/EXAMPLE" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-700 text-sm transition-all hover:scale-[1.02]" style="background: #25D366; color: #fff;">
+                        <span>Gabung Grup WhatsApp</span>
+                        <i data-lucide="external-link" style="width:16px;height:16px;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzOtQ_HfrhU8S8wu-GwUW0AqOdp5eDt_iF72cUkRh-klG5xbEbznUkwKW-yPrpT6Ms/exec';
+
+        const form = document.getElementById('osis-form');
+        const formView = document.getElementById('form-view');
+        const successView = document.getElementById('success-view');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const btn = document.getElementById('submit-btn');
+            const btnText = document.getElementById('submit-text');
+            const spinner = document.getElementById('submit-spinner');
+
+            btn.disabled = true;
+            btnText.textContent = 'Mengirim...';
+            spinner.classList.remove('hidden');
+
+            const payload = {
+                nama: document.getElementById('nama').value,
+                kelas: document.getElementById('kelas').value,
+                no_hp: document.getElementById('no_hp').value,
+                motivasi: document.getElementById('motivasi').value,
+                registered_at: new Date().toLocaleString('id-ID')
+            };
+
+            fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: JSON.stringify(payload),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(() => {
+                    formView.classList.add('hidden');
+                    successView.classList.remove('hidden');
+                    lucide.createIcons();
+                })
+                .catch(error => {
+                    alert('Gagal mengirim data. Cek koneksi atau hubingi anggota OSIS!');
+                    console.error(error);
+                })
+                .finally(() => {
+                    btn.disabled = false;
+                    btnText.textContent = 'Daftar Sekarang';
+                    spinner.classList.add('hidden');
+                });
+        });
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
